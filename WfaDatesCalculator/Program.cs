@@ -25,7 +25,7 @@ namespace WfaDatesCalculator
         {
             //делаем два поля с datepicker для ввода
             var startDate = new DateTime(2010, 1, 1);
-            var endDate = new DateTime(2011, 1, 1);
+            var endDate = new DateTime(2018, 1, 1);
 
             //еще два поля для ввод Number of tests: OS Percent: 
             Console.WriteLine("Input number of tests: ");
@@ -41,7 +41,7 @@ namespace WfaDatesCalculator
             osIsLengthDays = Math.Round(osIsLengthDays);
 
             //выово строка 1
-            Console.WriteLine("OS/IS: " + osIsLengthDays + " IS: "+ isLengthDays + " OS: " + osLengthDays);
+            Console.WriteLine("Total Period: " + osIsLengthDays + " IS: "+ isLengthDays + " OS: " + osLengthDays);
 
             var wfa  = new Wfa()
             {
@@ -97,10 +97,10 @@ namespace WfaDatesCalculator
             {
                 Console.WriteLine(Environment.NewLine);
                 Console.WriteLine("Test: " + i + Environment.NewLine +
-                                                    " IS Start: " + wfa.ISTests[i].StartDate.Date.ToShortDateString() + Environment.NewLine +
-                                                    " IS End: " + wfa.ISTests[i].EndDate.Date.ToShortDateString() + Environment.NewLine+
-                                                    " OS Start: " + wfa.OSTests[i].StartDate.Date.ToShortDateString() + Environment.NewLine+
-                                                    " OS End: " + wfa.OSTests[i].EndDate.Date.ToShortDateString() + Environment.NewLine);
+                            " IS Start: " + wfa.ISTests[i].StartDate.Date.ToString("dd-MM-yyyy") + Environment.NewLine +
+                            " IS End: " + wfa.ISTests[i].EndDate.Date.ToString("dd-MM-yyyy") + Environment.NewLine+
+                            " OS Start: " + wfa.OSTests[i].StartDate.Date.ToString("dd-MM-yyyy") + Environment.NewLine+
+                            " OS End: " + wfa.OSTests[i].EndDate.Date.ToString("dd-MM-yyyy") + Environment.NewLine);
             }
 
             Console.ReadKey();
